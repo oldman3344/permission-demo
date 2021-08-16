@@ -28,7 +28,7 @@ public class Code {
     /**
      * 请求成功
      */
-    public static final int SUCCESS = 200;
+    public static final int SUCCESS = 0;
 
 
     /**

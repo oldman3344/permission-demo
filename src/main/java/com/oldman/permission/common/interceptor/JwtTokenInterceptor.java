@@ -23,8 +23,12 @@ import java.io.PrintWriter;
 @Component
 public class JwtTokenInterceptor implements HandlerInterceptor {
 
+    private static RedisUtil redisUtil;
+
     @Autowired
-    private RedisUtil redisUtil;
+    public void setRedisUtil (RedisUtil redisUtil){
+        JwtTokenInterceptor.redisUtil= redisUtil;
+    }
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -33,7 +37,7 @@ public class JwtTokenInterceptor implements HandlerInterceptor {
         }
 
         NormalResponse rep = JwtUtils.verity(redisUtil);
-        if (200 == rep.getCode()) {
+        if (0 == rep.getCode()) {
             return true;
         }
         response.setCharacterEncoding("UTF-8");

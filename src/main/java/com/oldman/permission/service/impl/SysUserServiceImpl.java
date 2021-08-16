@@ -26,7 +26,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -54,9 +53,15 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public NormalResponse login(LoginDTO dto) {
+        Object o = redisUtil.get("captcha:" + dto.getVerKey());
+        AssertUtils.isTrue(null==o,"验证码已过期",Code.FAIL);
+        String redisCode = String.valueOf(o);
+        if (!dto.getCode().toLowerCase().equals(redisCode)){
+            AssertUtils.isTrue(true,"验证码错误",Code.FAIL);
+        }
         SysUser user = this.getUserByUsername(dto.getUsername());
         AssertUtils.isTrue(null == user, "该用户不存在，请检查用户名是否错误", Code.FAIL);
-        AssertUtils.isTrue(0 != user.getState(), "非常抱歉，该账号已被冻结，如有疑问，请联系管理员", Code.FAIL);
+        AssertUtils.isTrue(true == user.getFreeze(), "非常抱歉，该账号已被冻结，如有疑问，请联系管理员", Code.FAIL);
         BCryptPasswordEncoder encode = new BCryptPasswordEncoder();
         boolean matches = encode.matches(dto.getPassword(), user.getPassword());
         AssertUtils.isTrue(!matches, "密码错误，请重新输入", Code.FAIL);
@@ -66,7 +71,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         List<SysUserRole> sysUserRoles = sysUserRoleMapper.selectList(wrapper);
         List<Long> roleIdList = sysUserRoles.stream().map(SysUserRole::getRoleId).collect(Collectors.toList());
         List<String> roleNameList = null;
-        if (roleIdList.size() > 0){
+        if (roleIdList.size() > 0) {
             List<SysRole> sysRoles = sysRoleMapper.selectBatchIds(roleIdList);
             roleNameList = sysRoles.stream().map(SysRole::getName).collect(Collectors.toList());
         }
@@ -78,9 +83,9 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
             String jwt = JwtUtils.createToken(user.getId(), obj.toString());
             redisUtil.set(jwt, user, CACHE_TIME);
             redisUtil.set(user.getUsername(), jwt, CACHE_TIME);
-            return new NormalResponse<String>(Code.SUCCESS, "登录成功").setResult(jwt);
+            return new NormalResponse<String>(Code.SUCCESS, "登录成功").setData(jwt);
         }
-        return new NormalResponse(Code.SUCCESS, "登录成功").setResult(redisUtil.get(user.getUsername()));
+        return new NormalResponse(Code.SUCCESS, "登录成功").setData(redisUtil.get(user.getUsername()));
     }
 
     @Override
@@ -98,7 +103,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public NormalResponse updateUser(SysUserDTO dto) {
-        System.out.println(dto.getState());
+        SysUser sysUser = sysUserMapper.selectById(dto.getId());
+        AssertUtils.isTrue(null == sysUser, "该用户不存在", Code.FAIL);
+        sysUser.setFreeze(dto.getFreeze());
+        int num = sysUserMapper.updateById(sysUser);
+        AssertUtils.isTrue(num < 1, "修改失败", Code.FAIL);
         return new NormalResponse(Code.SUCCESS, "修改成功");
     }
 
@@ -115,7 +124,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         Page<SysUser> page = new Page<>(dto.getCurrent(), dto.getSize());
         Page<SysUser> sysUserPage = sysUserMapper.selectPage(page, StringUtils.isNotBlank(username) ? new QueryWrapper<SysUser>().like("username", username) : null);
         List<SysUser> sysUserList = sysUserPage.getRecords();
-        return new NormalResponse<List<SysUser>>(Code.SUCCESS, "查询成功").setResult(sysUserList);
+        return new NormalResponse<List<SysUser>>(Code.SUCCESS, "查询成功").setData(sysUserList);
     }
 
     @Override

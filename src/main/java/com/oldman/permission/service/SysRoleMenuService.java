@@ -1,6 +1,6 @@
 package com.oldman.permission.service;
 
-import com.oldman.permission.pojo.SysPermission;
+import com.oldman.permission.pojo.SysRolePermission;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author oldman
  * @since 2021-08-14
  */
-public interface SysPermissionService extends IService<SysPermission> {
+public interface SysRoleMenuService extends IService<SysRolePermission> {
 
 }

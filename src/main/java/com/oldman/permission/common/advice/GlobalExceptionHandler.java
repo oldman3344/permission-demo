@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public NormalResponse exceptionHandler(Exception e) {
         log.error("异常类型: {}，异常详情：{}，异常文件：{}，异常方法：{}，行号：{}",e.getClass().getName(),e.getMessage(),e.getStackTrace()[0].getFileName(),e.getStackTrace()[0].getMethodName(),e.getStackTrace()[0].getLineNumber());
-        return new NormalResponse(Code.ERROR, "出现服务异常，请联系管理员");
+        return new NormalResponse(Code.ERROR, "服务出现异常，请联系管理员");
     }
 
 

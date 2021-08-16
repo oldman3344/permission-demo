@@ -11,7 +11,7 @@ public class NormalResponse<T> extends BaseResponse{
 
     private static final long serialVersionUID = 8036410145772382323L;
 
-    private T result;
+    private T data;
     //private int count;
 
     public NormalResponse(){
@@ -20,7 +20,7 @@ public class NormalResponse<T> extends BaseResponse{
 
     public NormalResponse(T result) {
         super();
-        this.setResult(result);
+        this.setData(result);
     }
 
     public NormalResponse(Integer code) {
@@ -35,8 +35,8 @@ public class NormalResponse<T> extends BaseResponse{
         super(msg);
     }
 
-    public NormalResponse setResult(T result) {
-        this.result = result;
+    public NormalResponse setData(T data) {
+        this.data = data;
         return this;
     }
 

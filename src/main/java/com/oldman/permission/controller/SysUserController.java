@@ -11,8 +11,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
-
 /**
  * <p>
  *  前端控制器
@@ -22,7 +20,7 @@ import java.util.List;
  * @since 2021-08-14
  */
 @RestController
-@RequestMapping("/api/v2/sys_user")
+@RequestMapping("/sys/user")
 public class SysUserController {
 
     @Autowired

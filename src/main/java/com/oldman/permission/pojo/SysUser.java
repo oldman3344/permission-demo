@@ -39,10 +39,10 @@ public class SysUser implements Serializable {
     private String password;
 
     /**
-     * 状态（0未停用 1已停用）
+     * 是否冻结（0false 1true）
      */
-    @TableField(value = "is_state", fill = FieldFill.INSERT)
-    private Integer state;
+    @TableField(value = "is_freeze")
+    private Boolean freeze;
 
     /**
      * 创建时间

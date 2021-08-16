@@ -19,8 +19,8 @@ public class SysUserDTO implements Serializable {
 
     @NotNull(message = "用户ID不能为空", groups = ValidGroup.Crud.Update.class)
     private Long id;
-    @NotNull(message = "状态不能为空", groups = ValidGroup.Crud.Update.class)
-    private Integer state;
+    @NotNull(message = "是否冻结账号不能为空", groups = ValidGroup.Crud.Update.class)
+    private Boolean freeze;
 
     @NotBlank(message = "用户名不能为空", groups = ValidGroup.Crud.Create.class)
     private String username;

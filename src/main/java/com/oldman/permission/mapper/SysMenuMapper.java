@@ -1,6 +1,6 @@
 package com.oldman.permission.mapper;
 
-import com.oldman.permission.pojo.SysPermission;
+import com.oldman.permission.pojo.SysMenu;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author oldman
  * @since 2021-08-14
  */
-public interface SysPermissionMapper extends BaseMapper<SysPermission> {
+public interface SysMenuMapper extends BaseMapper<SysMenu> {
 
 }

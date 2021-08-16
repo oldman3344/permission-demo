@@ -105,7 +105,7 @@ public class JwtUtils {
                 // 拿到我们放置在token中的信息
                 List<String> audience = jwt.getAudience();
                 if (null != audience && audience.size() > 0) {
-                    return new NormalResponse<String>(Code.SUCCESS,"认证成功").setResult(audience.get(0));
+                    return new NormalResponse<String>(Code.SUCCESS,"认证成功").setData(audience.get(0));
                 }
             }
         } catch (IllegalArgumentException | JWTVerificationException e) {
