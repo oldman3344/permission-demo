@@ -1,3 +1,3 @@
 .idea
-./target
-./permission-demo.iml
+target/
+permission-demo.iml

@@ -3,6 +3,7 @@ package com.oldman.permission.service.impl;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.oldman.permission.common.Code;
 import com.oldman.permission.common.NormalResponse;
 import com.oldman.permission.pojo.SysMenu;
 import com.oldman.permission.mapper.SysMenuMapper;
@@ -37,33 +38,34 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     }
 
     @Override
-    public List<SysMenu> findChildrenMenuList() {
-        List<Long> oneIds = this.findOneMenuList().stream().map(SysMenu::getId).collect(Collectors.toList());
-        JSONObject parent = new JSONObject();
-        parent.put("title","");
-        parent.put("icon","");
-        parent.put("path","");
-        parent.put("hide","");
-        JSONArray childrenArray = new JSONArray();
-        for (Long id : oneIds) {
+    public NormalResponse findChildrenMenuList() {
+        List<SysMenu> oneMenuList = this.findOneMenuList();
+        JSONArray array = new JSONArray();
+        for(SysMenu menu: oneMenuList){
+            JSONObject parent = new JSONObject();
+            parent.put("title",menu.getTitle());
+            parent.put("icon",menu.getIcon());
+            parent.put("path",menu.getPath());
+            parent.put("hide",menu.getHide());
+            JSONArray childrenArray = new JSONArray();
             QueryWrapper<SysMenu> wrapper = new QueryWrapper<>();
-            wrapper.eq("parent_id", id);
+            wrapper.eq("parent_id", menu.getId());
             List<SysMenu> list = sysMenuMapper.selectList(wrapper);
-            JSONObject children = new JSONObject();
-            children.put("title","");
-            children.put("icon","");
-            children.put("path","");
-            children.put("component","");
-            children.put("hide","");
-            children.put("active","");
-            children.put("hideFooter","");
-            children.put("hideSidebar","");
-            children.put("closable","");
-            children.put("tabUnique","");
-            childrenArray.add(children);
-
+            for (SysMenu child : list) {
+                JSONObject children = new JSONObject();
+                children.put("title",child.getTitle());
+                children.put("icon",child.getIcon());
+                children.put("path",child.getPath());
+                children.put("hide",child.getHide());
+                children.put("hideFooter",child.getHideFooter());
+                children.put("hideSidebar",child.getHideSidebar());
+                children.put("closable",child.getClosable());
+                children.put("tabUnique",child.getTabUnique());
+                childrenArray.add(children);
+            }
+            parent.put("children",childrenArray);
+            array.add(parent);
         }
-        parent.put("children",childrenArray);
-        return null;
+        return new NormalResponse<JSONArray>(Code.SUCCESS).setData(array);
     }
 }
