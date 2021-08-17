@@ -6,6 +6,7 @@ import com.oldman.permission.common.NormalResponse;
 import com.oldman.permission.common.redis.RedisUtil;
 import com.wf.captcha.SpecCaptcha;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,7 @@ import java.util.UUID;
  * @author oldman
  * @date 2021/8/16 16:43
  */
+@CrossOrigin
 @RestController
 public class CaptchaController {
     @Autowired

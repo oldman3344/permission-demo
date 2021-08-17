@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class SysRolePermission implements Serializable {
+public class SysRoleMenu implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,9 +34,9 @@ public class SysRolePermission implements Serializable {
     private Long roleId;
 
     /**
-     * 权限ID
+     * 菜单ID
      */
-    private Long permissionId;
+    private Long menuId;
 
     /**
      * 创建时间

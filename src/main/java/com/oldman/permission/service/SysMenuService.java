@@ -15,7 +15,5 @@ import java.util.List;
  * @since 2021-08-14
  */
 public interface SysMenuService extends IService<SysMenu> {
-    List<SysMenu> findOneMenuList();
-
-    NormalResponse findChildrenMenuList();
+    NormalResponse findMenuList(Integer id);
 }

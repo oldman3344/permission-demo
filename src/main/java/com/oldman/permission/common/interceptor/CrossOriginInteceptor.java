@@ -14,18 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 public class CrossOriginInteceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
-        String origin = request.getHeader("Origin");
-        //当成非跨域请求
-        if(origin==null||origin.equals("")){
+        if (request.getMethod().equals("OPTIONS")) {
             return true;
         }
-        //非简单请求需要预请求，有json有cookie都是非简单请求
-        response.setHeader("Access-Control-Allow-Origin", origin);
-        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Credentials", "true");
-        response.setHeader("Access-Control-Allow-Headers", "content-type");
+        response.setHeader("Access-Control-Allow-Methods", "*");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type,Access-Token");
+        response.setHeader("Access-Control-Expose-Headers", "*");
         return true;
     }
 }

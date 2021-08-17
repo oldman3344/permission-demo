@@ -8,7 +8,7 @@ public class Code {
     /**
      * token无效
      */
-    public static final int TOKEN_INVALID = 422;
+    public static final int TOKEN_INVALID = 401;
 
     /**
      * 请求不存在

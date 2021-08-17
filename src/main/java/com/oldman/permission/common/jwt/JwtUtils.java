@@ -91,16 +91,17 @@ public class JwtUtils {
         HttpServletRequest request = SpringContextUtils.getHttpServletRequest();
         // 从请求头部中获取token信息
         String token = request.getHeader("Authorization");
-        if (StringUtils.isBlank(token)) {
+        String sub = token.substring(7, token.length());
+        if (StringUtils.isBlank(sub)) {
             return new NormalResponse(Code.TOKEN_INVALID,"用户信息已过期，请重新登录");
         }
-        if (null == redisUtil.get(token)){
+        if (null == redisUtil.get(sub)){
             return new NormalResponse(Code.TOKEN_INVALID,"用户信息已过期，请重新登录");
         }
         try {
             Algorithm algorithm = Algorithm.HMAC256(SECRET);
             JWTVerifier verifier = JWT.require(algorithm).build();
-            DecodedJWT jwt = verifier.verify(token);
+            DecodedJWT jwt = verifier.verify(sub);
             if (null != jwt) {
                 // 拿到我们放置在token中的信息
                 List<String> audience = jwt.getAudience();

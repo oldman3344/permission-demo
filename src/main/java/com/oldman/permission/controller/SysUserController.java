@@ -19,6 +19,7 @@ import javax.validation.Valid;
  * @author oldman
  * @since 2021-08-14
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/sys/user")
 public class SysUserController {
@@ -54,6 +55,11 @@ public class SysUserController {
     @PostMapping("/resetPassword")
     public NormalResponse resetPassword(Integer id){
         return sysUserService.resetPassword(id);
+    }
+
+    @GetMapping("/getInfo")
+    public NormalResponse getInfo(Integer id){
+        return sysUserService.getInfo(id);
     }
 }
 

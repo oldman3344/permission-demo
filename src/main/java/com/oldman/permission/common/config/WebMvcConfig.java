@@ -15,8 +15,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new CrossOriginInteceptor())
-                .addPathPatterns("/**");
+        /*registry.addInterceptor(new CrossOriginInteceptor())
+                .addPathPatterns("/**");*/
         registry.addInterceptor(new JwtTokenInterceptor())
                 .addPathPatterns("/sys/**")
                 .excludePathPatterns("/sys/user/login","/sys/user/file/captcha");

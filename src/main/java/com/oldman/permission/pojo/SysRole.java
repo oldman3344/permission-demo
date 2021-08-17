@@ -39,10 +39,10 @@ public class SysRole implements Serializable {
     private String remark;
 
     /**
-     * 状态（0未停用 1已停用）
+     * 是否停用（0否 1是）
      */
-    @TableField(value = "is_state", fill = FieldFill.INSERT)
-    private Integer state;
+    @TableField(value = "is_stop")
+    private Boolean stop;
 
     /**
      * 创建时间

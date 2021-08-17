@@ -30,4 +30,6 @@ public interface SysUserService extends IService<SysUser> {
     SysUser getUserByUsername(String username);
 
     NormalResponse resetPassword(Integer id);
+
+    NormalResponse getInfo(Integer id);
 }

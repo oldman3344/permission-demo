@@ -49,6 +49,11 @@ public class SysMenu implements Serializable {
     private Long parentId;
 
     /**
+     * 组件地址，父级非必须
+     */
+    private String component;
+
+    /**
      * 为true只注册路由不显示在左侧菜单（默认：1true）
      */
     @TableField(value = "is_hide")
@@ -57,7 +62,7 @@ public class SysMenu implements Serializable {
     /**
      * 是否隐藏全局页脚（默认：1是）
      */
-    @TableField(value = "is_is_hideFooter")
+    @TableField(value = "is_hideFooter")
     private Boolean hideFooter;
 
     /**

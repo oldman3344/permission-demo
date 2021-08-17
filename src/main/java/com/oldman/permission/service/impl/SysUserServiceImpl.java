@@ -1,5 +1,6 @@
 package com.oldman.permission.service.impl;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -79,13 +80,17 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         obj.put("role", roleNameList);
         obj.put("username", user.getUsername());
         boolean hasKey = redisUtil.hasKey(user.getUsername());
+        JSONObject jsonObj = new JSONObject();
+        jsonObj.put("id",user.getId());
         if (!hasKey) {
             String jwt = JwtUtils.createToken(user.getId(), obj.toString());
             redisUtil.set(jwt, user, CACHE_TIME);
             redisUtil.set(user.getUsername(), jwt, CACHE_TIME);
-            return new NormalResponse<String>(Code.SUCCESS, "登录成功").setData(jwt);
+            jsonObj.put("token",jwt);
+            return new NormalResponse<JSONObject>(Code.SUCCESS, "登录成功").setData(jsonObj);
         }
-        return new NormalResponse(Code.SUCCESS, "登录成功").setData(redisUtil.get(user.getUsername()));
+        jsonObj.put("token",redisUtil.get(user.getUsername()));
+        return new NormalResponse<JSONObject>(Code.SUCCESS, "登录成功").setData(jsonObj);
     }
 
     @Override
@@ -145,6 +150,21 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         int num = sysUserMapper.updateById(sysUser);
         AssertUtils.isTrue(num < 1, "重置密码失败", Code.FAIL);
         return new NormalResponse(Code.SUCCESS, "重置成功");
+    }
+
+    @Override
+    public NormalResponse getInfo(Integer id) {
+        SysUser sysUser = sysUserMapper.selectById(id);
+        JSONArray roleArray = new JSONArray();
+        JSONArray authorityArray = new JSONArray();
+        authorityArray.add("user:add");
+        authorityArray.add("role:add");
+        roleArray.add("admin");
+        JSONObject jsonObj = new JSONObject();
+        jsonObj.put("nickname","管理员");
+        jsonObj.put("authorities",authorityArray);
+        jsonObj.put("roles",roleArray);
+        return new NormalResponse<JSONObject>(Code.SUCCESS).setData(jsonObj);
     }
 
     private SysUser getUserById(Integer id) {
