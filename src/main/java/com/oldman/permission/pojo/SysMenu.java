@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -52,6 +53,11 @@ public class SysMenu implements Serializable {
      * 组件地址，父级非必须
      */
     private String component;
+
+    /**
+     * 排序号（默认：0）
+     */
+    private Integer orderNum;
 
     /**
      * 为true只注册路由不显示在左侧菜单（默认：1true）

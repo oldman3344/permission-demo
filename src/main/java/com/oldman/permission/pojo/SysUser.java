@@ -39,6 +39,16 @@ public class SysUser implements Serializable {
     private String password;
 
     /**
+     * 昵称
+     */
+    private String nickname;
+
+    /**
+     * 头像
+     */
+    private String avatar;
+
+    /**
      * 是否冻结（0false 1true）
      */
     @TableField(value = "is_freeze")

@@ -56,10 +56,5 @@ public class SysUserController {
     public NormalResponse resetPassword(Integer id){
         return sysUserService.resetPassword(id);
     }
-
-    @GetMapping("/getInfo")
-    public NormalResponse getInfo(Integer id){
-        return sysUserService.getInfo(id);
-    }
 }
 

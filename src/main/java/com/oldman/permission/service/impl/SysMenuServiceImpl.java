@@ -5,19 +5,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.oldman.permission.common.Code;
 import com.oldman.permission.common.NormalResponse;
-import com.oldman.permission.mapper.SysRoleMenuMapper;
-import com.oldman.permission.mapper.SysUserMapper;
-import com.oldman.permission.mapper.SysUserRoleMapper;
-import com.oldman.permission.pojo.SysMenu;
-import com.oldman.permission.mapper.SysMenuMapper;
-import com.oldman.permission.pojo.SysRoleMenu;
-import com.oldman.permission.pojo.SysUser;
-import com.oldman.permission.pojo.SysUserRole;
+import com.oldman.permission.mapper.*;
+import com.oldman.permission.pojo.*;
 import com.oldman.permission.service.SysMenuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,35 +36,37 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
     private SysUserMapper sysUserMapper;
     @Autowired
     private SysUserRoleMapper sysUserRoleMapper;
+    @Autowired
+    private SysRoleMapper sysRoleMapper;
 
     private JSONObject findOneMenuList(List<Long> menuIds) {
-        JSONArray array = new JSONArray();
+        List<SysMenu> list = new ArrayList<>();
         menuIds.forEach(id -> {
             SysMenu sysMenu = sysMenuMapper.selectById(id);
-            array.add(sysMenu);
+            list.add(sysMenu);
         });
-        JSONArray oneMenuArray = array.stream().filter(menu -> {
-            SysMenu sysMenu = (SysMenu) menu;
-            //false代表是菜单，0代表是一级菜单
-            if (sysMenu.getHide() == false && sysMenu.getParentId() == 0) {
-                return true;
-            } else {
-                return false;
-            }
-        }).collect(Collectors.toCollection(JSONArray::new));
-        JSONObject jsonObj = new JSONObject();
-        jsonObj.put("oneMenuList", oneMenuArray);
 
-        JSONArray childMenuArray = array.stream().filter(menu -> {
-            SysMenu sysMenu = (SysMenu) menu;
-            //false代表是菜单，0代表是一级菜单，大于0代表子级菜单
-            if (sysMenu.getHide() == false && sysMenu.getParentId() > 0) {
+        List<SysMenu> oneMenuList = list.stream().filter((menu) -> {
+            System.out.println(menu);
+            //false代表是菜单，0代表是一级菜单
+            if (menu.getHide() == false && menu.getParentId() == 0) {
                 return true;
             } else {
                 return false;
             }
-        }).collect(Collectors.toCollection(JSONArray::new));
-        jsonObj.put("childMenuList", childMenuArray);
+        }).sorted(Comparator.comparing((SysMenu::getOrderNum))).collect(Collectors.toList());
+        JSONObject jsonObj = new JSONObject();
+        jsonObj.put("oneMenuList", oneMenuList);
+
+        List<SysMenu> childMenuList = list.stream().filter(menu -> {
+            //false代表是菜单，0代表是一级菜单，大于0代表子级菜单
+            if (menu.getHide() == false && menu.getParentId() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }).sorted(Comparator.comparing((SysMenu::getOrderNum))).collect(Collectors.toList());
+        jsonObj.put("childMenuList", childMenuList);
         return jsonObj;
     }
 
@@ -81,8 +79,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         List<Long> menuIds = sysRoleMenuMapper.selectList(wrapper01).stream().map(SysRoleMenu::getMenuId).collect(Collectors.toList());
         JSONObject object = this.findOneMenuList(menuIds);
         JSONArray array = new JSONArray();
-        ((JSONArray) object.get("oneMenuList")).forEach(obj01->{
-            SysMenu menu01 = (SysMenu) obj01;
+        ((List<SysMenu>) object.get("oneMenuList")).forEach(menu01->{
             JSONObject parent = new JSONObject();
             parent.put("title", menu01.getTitle());
             parent.put("icon", menu01.getIcon());
@@ -90,8 +87,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             parent.put("hide", menu01.getHide());
             JSONArray childrenArray = new JSONArray();
 
-            ((JSONArray) object.get("childMenuList")).forEach(obj02->{
-                SysMenu menu02 = (SysMenu) obj02;
+            ((List<SysMenu>) object.get("childMenuList")).forEach(menu02->{
                 if (menu02.getParentId().equals(menu01.getId())){
                     JSONObject children = new JSONObject();
                     children.put("title", menu02.getTitle());
@@ -109,6 +105,20 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             parent.put("children", childrenArray);
             array.add(parent);
         });
-        return new NormalResponse<JSONArray>(Code.SUCCESS).setData(array);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("data",array);
+        JSONObject userObj = new JSONObject();
+        userObj.put("nickname",sysUser.getNickname());
+        userObj.put("avatar",sysUser.getAvatar());
+        SysRole sysRole = sysRoleMapper.selectById(sysUserRole.getRoleId());
+        JSONArray roleArray = new JSONArray();
+        JSONArray authorityArray = new JSONArray();
+        authorityArray.add("user:add");
+        authorityArray.add("role:add");
+        roleArray.add(sysRole.getName());
+        userObj.put("authorities",authorityArray);
+        userObj.put("roles",roleArray);
+        jsonObject.put("user",userObj);
+        return new NormalResponse<JSONObject>(Code.SUCCESS).setData(jsonObject);
     }
 }

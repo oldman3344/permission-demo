@@ -27,9 +27,5 @@ public interface SysUserService extends IService<SysUser> {
 
     NormalResponse findUserList(SysUserDTO dto,String username);
 
-    SysUser getUserByUsername(String username);
-
     NormalResponse resetPassword(Integer id);
-
-    NormalResponse getInfo(Integer id);
 }

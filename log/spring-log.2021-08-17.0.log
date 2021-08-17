@@ -1,0 +1,735 @@
+19:07:29.303 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+19:07:29.327 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 18120 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+19:07:29.327 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+19:07:30.583 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+19:07:30.593 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+19:07:30.658 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+19:07:31.381 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+19:07:31.391 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+19:07:31.392 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:07:31.393 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+19:07:31.477 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:07:31.477 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2081 ms
+19:07:33.489 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+19:07:33.508 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+19:07:33.516 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 4.924 seconds (JVM running for 6.415)
+19:07:41.273 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+19:07:41.273 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+19:07:41.274 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+19:07:55.926 [http-nio-9119-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:07:56.577 [http-nio-9119-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:07:57.202 [http-nio-9119-exec-4] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.data.redis.RedisConnectionFailureException，异常详情：Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1:6379，异常文件：LettuceConnectionFactory.java，异常方法：translateException，行号：1671
+19:08:41.559 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:08:41.564 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:08:44.384 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+19:08:44.393 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 22988 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+19:08:44.393 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+19:08:44.907 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+19:08:44.908 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+19:08:44.931 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+19:08:45.296 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+19:08:45.301 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+19:08:45.302 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:08:45.302 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+19:08:45.357 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:08:45.357 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 928 ms
+19:08:46.632 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+19:08:46.644 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+19:08:46.652 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.626 seconds (JVM running for 3.447)
+19:09:00.489 [http-nio-9119-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+19:09:00.490 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+19:09:00.491 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+19:09:00.637 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:09:01.089 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:09:01.786 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常信息: 验证码已过期
+19:44:25.562 [http-nio-9119-exec-4] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：JwtUtils.java，异常方法：verity，行号：94
+19:44:47.391 [http-nio-9119-exec-6] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常信息: 验证码错误
+22:15:14.476 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+22:15:14.482 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+22:15:20.743 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 1764 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+22:15:20.741 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+22:15:20.743 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+22:15:21.398 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+22:15:21.399 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:15:21.416 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+22:15:21.790 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+22:15:21.795 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+22:15:21.796 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+22:15:21.796 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+22:15:21.848 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22:15:21.848 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1040 ms
+22:15:23.059 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+22:15:23.097 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+22:15:23.104 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.77 seconds (JVM running for 3.529)
+22:16:45.806 [http-nio-9119-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:16:45.806 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22:16:45.808 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+22:16:46.954 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+22:16:47.196 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:01:31.493 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:01:31.504 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:01:36.153 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:01:36.159 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 26040 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:01:36.160 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:01:36.641 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:01:36.643 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:01:36.663 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:01:36.995 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:01:37.000 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:01:37.000 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:01:37.000 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:01:37.053 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:01:37.053 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 857 ms
+23:01:38.250 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:01:38.261 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:01:38.267 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.468 seconds (JVM running for 3.199)
+23:01:46.517 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:01:46.518 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:01:46.518 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:01:47.605 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:01:47.752 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:01:48.053 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:02:16.884 [http-nio-9119-exec-3] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:02:54.647 [http-nio-9119-exec-4] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:04:05.299 [http-nio-9119-exec-6] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:04:58.556 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m6s599ms218µs200ns).
+23:04:58.558 [http-nio-9119-exec-7] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:06:41.837 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:06:41.841 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:06:46.082 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:06:46.086 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 15700 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:06:46.086 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:06:46.538 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:06:46.539 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:06:46.562 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+23:06:46.896 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:06:46.904 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:06:46.905 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:06:46.905 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:06:46.957 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:06:46.957 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 840 ms
+23:06:48.179 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:06:48.190 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:06:48.197 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.456 seconds (JVM running for 3.236)
+23:06:53.171 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:06:53.172 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:06:53.172 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:06:54.262 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:06:54.418 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:06:54.660 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:07:09.834 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:07:23.174 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:07:23.179 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:07:27.444 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:07:27.447 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 23560 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:07:27.447 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:07:27.980 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:07:27.982 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:07:28.003 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+23:07:28.349 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:07:28.354 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:07:28.355 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:07:28.355 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:07:28.403 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:07:28.403 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 921 ms
+23:07:29.608 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:07:29.619 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:07:29.626 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.541 seconds (JVM running for 3.272)
+23:07:31.430 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:07:31.431 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:07:31.431 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:07:32.524 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:07:32.674 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:07:32.911 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:07:56.482 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:08:08.193 [http-nio-9119-exec-3] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:08:35.635 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:08:35.640 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:08:39.757 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:08:39.761 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 14560 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:08:39.762 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:08:40.234 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:08:40.235 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:08:40.253 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:08:40.595 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:08:40.601 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:08:40.601 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:08:40.601 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:08:40.659 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:08:40.659 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 860 ms
+23:08:41.857 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:08:41.868 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:08:41.874 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.464 seconds (JVM running for 3.27)
+23:08:44.491 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:08:44.491 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:08:44.492 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:08:45.618 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:08:45.778 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:09:03.986 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:09:29.542 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: org.springframework.jdbc.BadSqlGrammarException，异常详情：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+### The error may exist in com/oldman/permission/mapper/SysMenuMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT id,title,icon,path,parent_id,component,order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,is_closable AS closable,is_tabUnique AS tabUnique,gmt_create,gmt_modified FROM sys_menu WHERE id=?
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order,is_hide AS hide,is_hideFooter AS hideFooter,is_hideSidebar AS hideSidebar,' at line 1，异常文件：SQLErrorCodeSQLExceptionTranslator.java，异常方法：doTranslate，行号：239
+23:10:53.364 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:10:53.370 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:10:57.634 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:10:57.640 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 9304 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:10:57.641 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:10:58.173 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:10:58.174 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:10:58.193 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+23:10:58.582 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:10:58.588 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:10:58.588 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:10:58.588 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:10:58.640 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:10:58.640 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 964 ms
+23:10:59.977 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:10:59.984 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.707 seconds (JVM running for 3.398)
+23:12:11.668 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:12:11.672 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 14968 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:12:11.673 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:12:12.138 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:12:12.139 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:12:12.158 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+23:12:12.490 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:12:12.495 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:12:12.496 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:12:12.496 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:12:12.547 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:12:12.547 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 842 ms
+23:12:13.748 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:12:13.759 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:12:13.766 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.447 seconds (JVM running for 3.11)
+23:12:27.803 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:12:27.803 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:12:27.804 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+23:12:28.889 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:12:29.035 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:12:29.243 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：SysMenuServiceImpl.java，异常方法：lambda$findOneMenuList$1，行号：50
+23:12:51.940 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:12:51.947 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:12:55.960 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:12:55.964 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 26440 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:12:55.964 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:12:56.425 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:12:56.426 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:12:56.448 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+23:12:56.773 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:12:56.778 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:12:56.779 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:12:56.779 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:12:56.831 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:12:56.831 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 831 ms
+23:12:58.029 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:12:58.040 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:12:58.047 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.429 seconds (JVM running for 3.108)
+23:13:01.737 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:13:01.737 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:13:01.737 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:13:02.886 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:13:03.044 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:13:03.237 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：SysMenuServiceImpl.java，异常方法：lambda$findOneMenuList$1，行号：51
+23:13:29.886 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：SysMenuServiceImpl.java，异常方法：lambda$findOneMenuList$1，行号：51
+23:13:30.496 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:13:30.501 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:13:34.658 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:13:34.661 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 12884 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:13:34.662 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:13:35.168 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:13:35.169 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:13:35.189 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+23:13:35.508 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:13:35.513 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:13:35.513 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:13:35.514 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:13:35.565 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:13:35.565 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 865 ms
+23:13:36.825 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:13:36.839 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:13:36.847 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.528 seconds (JVM running for 3.225)
+23:13:39.921 [http-nio-9119-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:13:39.922 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:13:39.922 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:13:40.990 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:13:41.131 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:13:41.353 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：SysMenuServiceImpl.java，异常方法：lambda$findOneMenuList$1，行号：51
+23:13:59.592 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:13:59.597 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:14:03.492 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:14:03.498 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 25804 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:14:03.499 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:14:03.944 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:14:03.946 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:14:03.965 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+23:14:04.291 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:14:04.296 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:14:04.296 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:14:04.296 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:14:04.349 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:14:04.349 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 816 ms
+23:14:05.540 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:14:05.551 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:14:05.558 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.403 seconds (JVM running for 3.085)
+23:14:08.748 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:14:08.748 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:14:08.749 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+23:14:09.849 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:14:09.996 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:14:10.200 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：SysMenuServiceImpl.java，异常方法：lambda$findOneMenuList$1，行号：51
+23:14:41.362 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:14:41.367 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:14:45.750 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:14:45.756 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 21412 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:14:45.757 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:14:46.272 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:14:46.274 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:14:46.292 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+23:14:46.642 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:14:46.648 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:14:46.648 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:14:46.648 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:14:46.701 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:14:46.702 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 903 ms
+23:14:47.948 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:14:47.959 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:14:47.965 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.588 seconds (JVM running for 3.371)
+23:14:49.377 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:14:49.377 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:14:49.378 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+23:14:50.479 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:14:50.632 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:15:20.539 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：SysMenuServiceImpl.java，异常方法：lambda$findOneMenuList$1，行号：51
+23:15:29.294 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:15:29.300 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:15:33.452 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:15:33.457 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 12060 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:15:33.457 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:15:33.949 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:15:33.951 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:15:33.968 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:15:34.311 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:15:34.316 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:15:34.317 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:15:34.317 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:15:34.370 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:15:34.370 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 879 ms
+23:15:35.599 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:15:35.612 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:15:35.620 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.54 seconds (JVM running for 3.278)
+23:15:39.692 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:15:39.693 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:15:39.693 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:15:40.854 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:15:41.001 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:15:41.206 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：SysMenuServiceImpl.java，异常方法：lambda$findOneMenuList$1，行号：51
+23:16:08.520 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:16:08.525 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:16:12.657 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:16:12.663 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 25424 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:16:12.663 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:16:13.140 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:16:13.141 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:16:13.162 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+23:16:13.485 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:16:13.490 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:16:13.490 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:16:13.491 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:16:13.543 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:16:13.543 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 844 ms
+23:16:14.739 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:16:14.753 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:16:14.762 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.507 seconds (JVM running for 3.272)
+23:16:16.585 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:16:16.586 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:16:16.587 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+23:16:17.728 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:16:17.875 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:16:18.096 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$77a9974f$1，行号：469
+23:17:27.463 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:17:27.468 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:17:31.478 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:17:31.483 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 26604 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:17:31.483 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:17:32.006 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:17:32.007 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:17:32.027 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+23:17:32.397 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:17:32.403 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:17:32.403 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:17:32.403 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:17:32.460 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:17:32.460 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 943 ms
+23:17:33.831 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:17:33.842 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:17:33.848 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.73 seconds (JVM running for 3.428)
+23:17:36.195 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:17:36.196 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:17:36.196 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:17:37.316 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:17:37.461 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:17:37.672 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$77a9974f$1，行号：469
+23:17:55.987 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$77a9974f$1，行号：469
+23:17:59.541 [http-nio-9119-exec-3] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$77a9974f$1，行号：469
+23:18:16.977 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:18:16.984 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:18:21.316 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:18:21.320 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 24968 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:18:21.320 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:18:21.794 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:18:21.796 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:18:21.817 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:18:22.134 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:18:22.139 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:18:22.139 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:18:22.139 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:18:22.191 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:18:22.191 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 835 ms
+23:18:23.361 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:18:23.372 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:18:23.378 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.403 seconds (JVM running for 3.164)
+23:18:25.644 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:18:25.644 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:18:25.645 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+23:18:26.729 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:18:26.880 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:18:27.082 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$77a9974f$1，行号：469
+23:20:03.814 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:20:03.820 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:20:07.891 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:20:07.894 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 20364 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:20:07.894 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:20:08.374 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:20:08.375 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:20:08.395 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:20:08.726 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:20:08.731 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:20:08.732 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:20:08.732 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:20:08.782 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:20:08.782 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 854 ms
+23:20:09.987 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:20:09.999 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:20:10.007 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.461 seconds (JVM running for 3.24)
+23:20:12.378 [http-nio-9119-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:20:12.379 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:20:12.379 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:20:13.455 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:20:13.602 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:20:13.806 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$77a9974f$1，行号：469
+23:21:51.005 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:21:51.010 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:21:55.228 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:21:55.232 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 25892 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:21:55.236 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:21:55.706 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:21:55.708 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:21:55.726 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:21:56.069 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:21:56.076 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:21:56.077 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:21:56.077 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:21:56.133 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:21:56.133 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 862 ms
+23:21:57.364 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:21:57.377 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:21:57.384 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.49 seconds (JVM running for 3.179)
+23:21:59.789 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:21:59.789 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:21:59.790 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+23:22:00.891 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:22:01.036 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:22:01.253 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$ea9a8b3a$1，行号：436
+23:22:47.470 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$ea9a8b3a$1，行号：436
+23:22:54.121 [http-nio-9119-exec-3] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$ea9a8b3a$1，行号：436
+23:24:09.906 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:24:09.912 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:24:14.097 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:24:14.100 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 19912 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:24:14.101 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:24:14.572 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:24:14.594 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:24:14.616 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+23:24:15.003 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:24:15.010 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:24:15.010 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:24:15.010 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:24:15.062 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:24:15.062 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 924 ms
+23:24:16.327 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:24:16.339 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:24:16.345 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.584 seconds (JVM running for 3.27)
+23:24:18.737 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:24:18.737 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:24:18.738 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+23:24:19.826 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:24:19.983 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:24:20.205 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$77a9974f$1，行号：469
+23:26:00.384 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:26:00.405 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:26:04.689 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:26:04.693 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 18876 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:26:04.693 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:26:05.160 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:26:05.161 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:26:05.179 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:26:05.507 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:26:05.513 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:26:05.513 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:26:05.513 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:26:05.561 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:26:05.561 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 832 ms
+23:26:06.760 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:26:06.773 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:26:06.780 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.421 seconds (JVM running for 3.214)
+23:26:12.248 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:26:12.248 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:26:12.249 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+23:26:13.328 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:26:13.475 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:26:13.664 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$77a9974f$1，行号：469
+23:27:30.657 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:27:30.663 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:27:35.868 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:27:35.873 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 27496 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:27:35.873 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:27:36.353 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:27:36.354 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:27:36.371 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:27:36.692 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:27:36.697 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:27:36.697 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:27:36.697 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:27:36.750 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:27:36.750 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 840 ms
+23:27:37.989 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:27:38.000 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:27:38.008 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.481 seconds (JVM running for 3.232)
+23:27:41.159 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:27:41.160 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:27:41.160 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:27:42.257 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:27:42.410 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:27:42.625 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$77a9974f$1，行号：469
+23:30:53.157 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:30:53.162 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:30:58.474 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:30:58.481 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 23040 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:30:58.481 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:30:58.950 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:30:58.952 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:30:58.970 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:30:59.304 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:30:59.310 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:30:59.310 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:30:59.310 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:30:59.363 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:30:59.363 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 846 ms
+23:31:00.597 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:31:00.609 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:31:00.615 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.5 seconds (JVM running for 3.157)
+23:31:03.285 [http-nio-9119-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:31:03.285 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:31:03.286 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:31:04.442 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:31:04.619 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:31:04.847 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：Comparator.java，异常方法：lambda$comparing$77a9974f$1，行号：469
+23:31:39.271 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:31:39.275 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:31:43.089 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:31:43.093 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 17140 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:31:43.093 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:31:43.517 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:31:43.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:31:43.535 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:31:43.833 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:31:43.838 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:31:43.839 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:31:43.839 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:31:43.886 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:31:43.886 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 761 ms
+23:31:45.136 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:31:45.148 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:31:45.154 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.372 seconds (JVM running for 3.086)
+23:31:50.235 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:31:50.235 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:31:50.236 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+23:31:51.339 [http-nio-9119-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:31:51.475 [http-nio-9119-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:31:51.677 [http-nio-9119-exec-3] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.NullPointerException，异常详情：null，异常文件：SysMenuServiceImpl.java，异常方法：lambda$findOneMenuList$1，行号：49
+23:33:48.579 [http-nio-9119-exec-4] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.ClassCastException，异常详情：java.util.ArrayList cannot be cast to com.alibaba.fastjson.JSONArray，异常文件：SysMenuServiceImpl.java，异常方法：findMenuList，行号：86
+23:34:36.846 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:34:36.852 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:34:40.625 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 17932 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:34:40.623 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:34:40.626 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:34:41.052 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:34:41.053 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:34:41.071 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:34:41.376 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:34:41.381 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:34:41.381 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:34:41.381 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:34:41.429 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:34:41.429 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 773 ms
+23:34:42.589 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:34:42.601 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:34:42.608 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.3 seconds (JVM running for 2.982)
+23:34:46.444 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:34:46.444 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:34:46.444 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:34:47.468 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:34:47.604 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:35:13.559 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=55s954ms503µs800ns).
+23:35:13.562 [http-nio-9119-exec-1] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.ClassCastException，异常详情：java.util.ArrayList cannot be cast to com.alibaba.fastjson.JSONArray，异常文件：SysMenuServiceImpl.java，异常方法：findMenuList，行号：82
+23:35:53.192 [http-nio-9119-exec-2] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常类型: java.lang.ClassCastException，异常详情：java.util.ArrayList cannot be cast to com.alibaba.fastjson.JSONArray，异常文件：SysMenuServiceImpl.java，异常方法：findMenuList，行号：82
+23:36:54.282 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:36:54.288 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:36:58.106 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:36:58.111 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 18588 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:36:58.112 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:36:58.530 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:36:58.532 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:36:58.549 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:36:58.851 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:36:58.856 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:36:58.857 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:36:58.857 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:36:58.904 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:36:58.904 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 762 ms
+23:37:00.028 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:37:00.039 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:37:00.046 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.257 seconds (JVM running for 2.901)
+23:37:03.967 [http-nio-9119-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:37:03.968 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:37:03.968 [http-nio-9119-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:37:04.978 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:37:05.114 [http-nio-9119-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:38:41.023 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:38:41.027 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:38:44.781 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:38:44.785 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 24660 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:38:44.785 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:38:45.210 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:38:45.211 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:38:45.229 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:38:45.543 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:38:45.548 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:38:45.548 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:38:45.548 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:38:45.598 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:38:45.598 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 782 ms
+23:38:46.711 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:38:46.722 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:38:46.729 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.26 seconds (JVM running for 2.904)
+23:38:54.485 [http-nio-9119-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:38:54.485 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:38:54.486 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+23:38:55.593 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:38:55.720 [http-nio-9119-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:43:12.192 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:43:12.197 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:43:16.282 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+23:43:16.285 [main] INFO  c.o.p.PermissionDemoApplication - Starting PermissionDemoApplication using Java 1.8.0_191 on DESKTOP-7P2EMS6 with PID 6624 (E:\idea_workspace\permission-demo\target\classes started by oldman in E:\idea_workspace\permission-demo)
+23:43:16.285 [main] INFO  c.o.p.PermissionDemoApplication - No active profile set, falling back to default profiles: default
+23:43:16.707 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+23:43:16.708 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+23:43:16.725 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+23:43:17.034 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9119 (http)
+23:43:17.040 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9119"]
+23:43:17.040 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:43:17.040 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.50]
+23:43:17.087 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:43:17.088 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 773 ms
+23:43:18.223 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9119"]
+23:43:18.234 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9119 (http) with context path ''
+23:43:18.240 [main] INFO  c.o.p.PermissionDemoApplication - Started PermissionDemoApplication in 2.267 seconds (JVM running for 2.945)
+23:43:29.206 [http-nio-9119-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:43:29.206 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:43:29.206 [http-nio-9119-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+23:43:49.481 [http-nio-9119-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:43:49.990 [http-nio-9119-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:43:50.015 [http-nio-9119-exec-4] ERROR c.o.p.c.a.GlobalExceptionHandler - 异常信息: 验证码错误
+23:45:37.585 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:45:37.591 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

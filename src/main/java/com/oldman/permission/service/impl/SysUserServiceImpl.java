@@ -132,8 +132,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         return new NormalResponse<List<SysUser>>(Code.SUCCESS, "查询成功").setData(sysUserList);
     }
 
-    @Override
-    public SysUser getUserByUsername(String username) {
+    private SysUser getUserByUsername(String username) {
         AssertUtils.isTrue(StringUtils.isBlank(username), "用户名不能为空", Code.ARGUMENT_ERROR);
         QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
         wrapper.eq("username", username);
@@ -150,21 +149,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         int num = sysUserMapper.updateById(sysUser);
         AssertUtils.isTrue(num < 1, "重置密码失败", Code.FAIL);
         return new NormalResponse(Code.SUCCESS, "重置成功");
-    }
-
-    @Override
-    public NormalResponse getInfo(Integer id) {
-        SysUser sysUser = sysUserMapper.selectById(id);
-        JSONArray roleArray = new JSONArray();
-        JSONArray authorityArray = new JSONArray();
-        authorityArray.add("user:add");
-        authorityArray.add("role:add");
-        roleArray.add("admin");
-        JSONObject jsonObj = new JSONObject();
-        jsonObj.put("nickname","管理员");
-        jsonObj.put("authorities",authorityArray);
-        jsonObj.put("roles",roleArray);
-        return new NormalResponse<JSONObject>(Code.SUCCESS).setData(jsonObj);
     }
 
     private SysUser getUserById(Integer id) {
