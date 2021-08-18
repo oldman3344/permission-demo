@@ -47,7 +47,6 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         });
 
         List<SysMenu> oneMenuList = list.stream().filter((menu) -> {
-            System.out.println(menu);
             //false代表是菜单，0代表是一级菜单
             if (menu.getHide() == false && menu.getParentId() == 0) {
                 return true;

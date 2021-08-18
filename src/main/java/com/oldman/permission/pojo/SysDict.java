@@ -1,24 +1,21 @@
 package com.oldman.permission.pojo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+
 /**
- * <p>
- * 
- * </p>
- *
  * @author oldman
- * @since 2021-08-14
+ * @date 2021/8/18 15:24
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class SysUser implements Serializable {
+public class SysDict implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,40 +26,34 @@ public class SysUser implements Serializable {
     private Long id;
 
     /**
-     * 用户名
+     * 父级ID（默认：0）
      */
-    private String username;
+    private Long pId;
 
     /**
-     * 密码
+     * 数据类别
      */
-    private String password;
+    private String dataType;
 
     /**
-     * 性别（0男，1女）
+     * 数据编码
      */
-    private Integer sex;
+    private String dataCode;
 
     /**
-     * 手机号
+     * 数据值
      */
-    private String phone;
+    private String dataValue;
 
     /**
-     * 昵称
+     * 排序号
      */
-    private String nickname;
+    private Integer sortNum;
 
     /**
-     * 头像
+     * 备注
      */
-    private String avatar;
-
-    /**
-     * 是否冻结（0false 1true）
-     */
-    @TableField(value = "is_freeze")
-    private Boolean freeze;
+    private String remark;
 
     /**
      * 创建时间
@@ -75,10 +66,4 @@ public class SysUser implements Serializable {
      */
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Long gmtModified;
-
-    @TableField(exist = false)
-    private String sexName;
-
-    @TableField(exist = false)
-    private SysRole[] roles;
 }

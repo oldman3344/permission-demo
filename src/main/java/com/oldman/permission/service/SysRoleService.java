@@ -1,5 +1,6 @@
 package com.oldman.permission.service;
 
+import com.oldman.permission.common.NormalResponse;
 import com.oldman.permission.pojo.SysRole;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface SysRoleService extends IService<SysRole> {
 
+    NormalResponse findRoleList();
 }

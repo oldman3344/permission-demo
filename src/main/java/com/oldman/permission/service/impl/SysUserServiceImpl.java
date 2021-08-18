@@ -1,6 +1,5 @@
 package com.oldman.permission.service.impl;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -11,8 +10,10 @@ import com.oldman.permission.common.redis.RedisUtil;
 import com.oldman.permission.common.util.AssertUtils;
 import com.oldman.permission.dto.SysUserDTO;
 import com.oldman.permission.dto.LoginDTO;
+import com.oldman.permission.mapper.SysDictMapper;
 import com.oldman.permission.mapper.SysRoleMapper;
 import com.oldman.permission.mapper.SysUserRoleMapper;
+import com.oldman.permission.pojo.SysDict;
 import com.oldman.permission.pojo.SysRole;
 import com.oldman.permission.pojo.SysUser;
 import com.oldman.permission.mapper.SysUserMapper;
@@ -48,9 +49,12 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Autowired
     private SysRoleMapper sysRoleMapper;
     @Autowired
+    private SysDictMapper sysDictMapper;
+    @Autowired
     private RedisUtil redisUtil;
     @Value("${cache.time}")
     private Integer CACHE_TIME;
+
 
     @Override
     public NormalResponse login(LoginDTO dto) {
@@ -101,6 +105,9 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         sysUser.setUsername(dto.getUsername());
         BCryptPasswordEncoder encode = new BCryptPasswordEncoder();
         sysUser.setPassword(encode.encode(dto.getPassword()));
+        sysUser.setSex(dto.getSex());
+        sysUser.setPhone(null==dto.getPhone()?null:dto.getPhone());
+        sysUser.setNickname(dto.getNickname());
         int num = sysUserMapper.insert(sysUser);
         AssertUtils.isTrue(num < 1, "添加失败", Code.FAIL);
         return new NormalResponse(Code.SUCCESS, "添加成功");
@@ -111,6 +118,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         SysUser sysUser = sysUserMapper.selectById(dto.getId());
         AssertUtils.isTrue(null == sysUser, "该用户不存在", Code.FAIL);
         sysUser.setFreeze(dto.getFreeze());
+        sysUser.setNickname(dto.getNickname());
         int num = sysUserMapper.updateById(sysUser);
         AssertUtils.isTrue(num < 1, "修改失败", Code.FAIL);
         return new NormalResponse(Code.SUCCESS, "修改成功");
@@ -126,10 +134,43 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public NormalResponse findUserList(SysUserDTO dto, String username) {
-        Page<SysUser> page = new Page<>(dto.getCurrent(), dto.getSize());
-        Page<SysUser> sysUserPage = sysUserMapper.selectPage(page, StringUtils.isNotBlank(username) ? new QueryWrapper<SysUser>().like("username", username) : null);
+        Page<SysUser> page = new Page<>(dto.getPage(), dto.getLimit());
+        QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
+        wrapper.select("id","username","nickname","sex","phone","gmt_create");
+        if (StringUtils.isNotBlank(username)){
+            wrapper.like("username", username);
+        }
+        Page<SysUser> sysUserPage = sysUserMapper.selectPage(page, wrapper);
         List<SysUser> sysUserList = sysUserPage.getRecords();
-        return new NormalResponse<List<SysUser>>(Code.SUCCESS, "查询成功").setData(sysUserList);
+
+        QueryWrapper<SysDict> dictWrapper = new QueryWrapper<>();
+        dictWrapper.select("data_code","data_value").eq("data_type","sex");
+        List<SysDict> sexList = sysDictMapper.selectList(dictWrapper);
+
+        QueryWrapper<SysRole> roleWrapper= new QueryWrapper<>();
+        roleWrapper.select("id","name");
+        List<SysRole> sysRoleList = sysRoleMapper.selectList(roleWrapper);
+
+        List<SysUser> collect = sysUserList.stream().filter(sysUser -> {
+            sexList.forEach(sex ->{
+                Integer code = Integer.valueOf(sex.getDataCode());
+                if (sysUser.getSex().equals(code)){
+                    sysUser.setSexName(sex.getDataValue());
+                }
+            });
+            List<SysUserRole> userRoleList = sysUserRoleMapper.findUserRoleList(sysUser.getId());
+            SysRole[] roles = new SysRole[userRoleList.size()];
+            sysRoleList.forEach(role ->{
+                for (int i = 0; i < userRoleList.size(); i++) {
+                    if (role.getId().equals(userRoleList.get(i).getRoleId())){
+                        roles[i] = role;
+                    }
+                }
+            });
+            sysUser.setRoles(roles);
+            return true;
+        }).collect(Collectors.toList());
+        return new NormalResponse<List<SysUser>>(Code.SUCCESS, "查询成功").setData(collect);
     }
 
     private SysUser getUserByUsername(String username) {

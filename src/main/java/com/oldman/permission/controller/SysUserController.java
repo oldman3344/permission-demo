@@ -42,7 +42,7 @@ public class SysUserController {
         return sysUserService.updateUser(dto);
     }
 
-    @GetMapping("/findUserList")
+    @GetMapping("/page")
     public NormalResponse findUserList(@Validated(value = ValidGroup.Crud.Query.class) SysUserDTO dto,String username){
         return sysUserService.findUserList(dto,username);
     }
