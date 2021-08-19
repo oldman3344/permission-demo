@@ -19,13 +19,19 @@ public interface SysUserService extends IService<SysUser> {
 
     NormalResponse login(LoginDTO dto);
 
+    NormalResponse findUser(String username);
+
     NormalResponse addUser(SysUserDTO dto);
 
     NormalResponse updateUser(SysUserDTO dto);
 
-    NormalResponse deleteUser(SysUserDTO dto);
+    NormalResponse deleteUser(Integer id);
+
+    NormalResponse deleteBatchUser(Integer[] id);
 
     NormalResponse findUserList(SysUserDTO dto,String username);
 
     NormalResponse resetPassword(Integer id);
+
+    NormalResponse updateState(Integer id,Integer state);
 }

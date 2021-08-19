@@ -1,6 +1,7 @@
 package com.oldman.permission.controller;
 
 
+import com.oldman.permission.common.Code;
 import com.oldman.permission.common.NormalResponse;
 import com.oldman.permission.common.valid.ValidGroup;
 import com.oldman.permission.dto.SysUserDTO;
@@ -11,6 +12,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -19,41 +22,55 @@ import javax.validation.Valid;
  * @author oldman
  * @since 2021-08-14
  */
-@CrossOrigin
 @RestController
-@RequestMapping("/sys/user")
+@RequestMapping("/sys")
 public class SysUserController {
 
     @Autowired
     private SysUserService sysUserService;
 
-    @PostMapping("/login")
+    @PostMapping("/user/login")
     public NormalResponse login(@RequestBody @Valid LoginDTO dto){
         return sysUserService.login(dto);
     }
 
-    @PostMapping("/addUser")
+    @GetMapping("/user")
+    public NormalResponse findUser(String username){
+        return sysUserService.findUser(username);
+    }
+
+    @PostMapping("/user")
     public NormalResponse addUser(@RequestBody @Validated(value = ValidGroup.Crud.Create.class) SysUserDTO dto){
         return sysUserService.addUser(dto);
     }
 
-    @PostMapping("/updateUser")
+    @PutMapping("/user")
     public NormalResponse updateUser(@RequestBody @Validated(value = ValidGroup.Crud.Update.class) SysUserDTO dto){
         return sysUserService.updateUser(dto);
     }
 
-    @GetMapping("/page")
+    @DeleteMapping("/user/{id}")
+    public NormalResponse deleteUser(@PathVariable Integer id){
+        return sysUserService.deleteUser(id);
+    }
+
+    @GetMapping("/user/page")
     public NormalResponse findUserList(@Validated(value = ValidGroup.Crud.Query.class) SysUserDTO dto,String username){
         return sysUserService.findUserList(dto,username);
     }
 
-    @DeleteMapping("/deleteUser")
-    public NormalResponse deleteUser(@Validated(value = ValidGroup.Crud.Delete.class) SysUserDTO dto){
-        return sysUserService.deleteUser(dto);
+    @PutMapping("/user/state/{id}/{state}")
+    public NormalResponse updateState(@PathVariable Integer id,@PathVariable Integer state){
+        return sysUserService.updateState(id,state);
     }
 
-    @PostMapping("/resetPassword")
-    public NormalResponse resetPassword(Integer id){
+    @DeleteMapping("/user/batch")
+    public NormalResponse deleteBatchUser(@RequestBody Integer[] id){
+        return sysUserService.deleteBatchUser(id);
+    }
+
+    @PutMapping("/user/resetPassword/{id}")
+    public NormalResponse resetPassword(@PathVariable Integer id){
         return sysUserService.resetPassword(id);
     }
 }

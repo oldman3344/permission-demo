@@ -59,10 +59,9 @@ public class SysUser implements Serializable {
     private String avatar;
 
     /**
-     * 是否冻结（0false 1true）
+     * 状态（0false 1true）
      */
-    @TableField(value = "is_freeze")
-    private Boolean freeze;
+    private Boolean state;
 
     /**
      * 创建时间

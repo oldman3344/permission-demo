@@ -27,6 +27,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -59,14 +60,14 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public NormalResponse login(LoginDTO dto) {
         Object o = redisUtil.get("captcha:" + dto.getVerKey());
-        AssertUtils.isTrue(null==o,"验证码已过期",Code.FAIL);
+        AssertUtils.isTrue(null == o, "验证码已过期", Code.FAIL);
         String redisCode = String.valueOf(o);
-        if (!dto.getCode().toLowerCase().equals(redisCode)){
-            AssertUtils.isTrue(true,"验证码错误",Code.FAIL);
+        if (!dto.getCode().toLowerCase().equals(redisCode)) {
+            AssertUtils.isTrue(true, "验证码错误", Code.FAIL);
         }
         SysUser user = this.getUserByUsername(dto.getUsername());
         AssertUtils.isTrue(null == user, "该用户不存在，请检查用户名是否错误", Code.FAIL);
-        AssertUtils.isTrue(true == user.getFreeze(), "非常抱歉，该账号已被冻结，如有疑问，请联系管理员", Code.FAIL);
+        AssertUtils.isTrue(false == user.getState(), "非常抱歉，该账号已被冻结，如有疑问，请联系管理员", Code.FAIL);
         BCryptPasswordEncoder encode = new BCryptPasswordEncoder();
         boolean matches = encode.matches(dto.getPassword(), user.getPassword());
         AssertUtils.isTrue(!matches, "密码错误，请重新输入", Code.FAIL);
@@ -85,16 +86,25 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         obj.put("username", user.getUsername());
         boolean hasKey = redisUtil.hasKey(user.getUsername());
         JSONObject jsonObj = new JSONObject();
-        jsonObj.put("id",user.getId());
+        jsonObj.put("id", user.getId());
         if (!hasKey) {
             String jwt = JwtUtils.createToken(user.getId(), obj.toString());
             redisUtil.set(jwt, user, CACHE_TIME);
             redisUtil.set(user.getUsername(), jwt, CACHE_TIME);
-            jsonObj.put("token",jwt);
+            jsonObj.put("token", jwt);
             return new NormalResponse<JSONObject>(Code.SUCCESS, "登录成功").setData(jsonObj);
         }
-        jsonObj.put("token",redisUtil.get(user.getUsername()));
+        jsonObj.put("token", redisUtil.get(user.getUsername()));
         return new NormalResponse<JSONObject>(Code.SUCCESS, "登录成功").setData(jsonObj);
+    }
+
+    @Override
+    public NormalResponse findUser(String username) {
+        SysUser sysUser = this.getUserByUsername(username);
+        if (null == sysUser){
+            return new NormalResponse(Code.ARGUMENT_ERROR);
+        }
+        return new NormalResponse(Code.SUCCESS).setData(sysUser.getUsername());
     }
 
     @Override
@@ -106,7 +116,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         BCryptPasswordEncoder encode = new BCryptPasswordEncoder();
         sysUser.setPassword(encode.encode(dto.getPassword()));
         sysUser.setSex(dto.getSex());
-        sysUser.setPhone(null==dto.getPhone()?null:dto.getPhone());
+        sysUser.setPhone(null == dto.getPhone() ? null : dto.getPhone());
         sysUser.setNickname(dto.getNickname());
         int num = sysUserMapper.insert(sysUser);
         AssertUtils.isTrue(num < 1, "添加失败", Code.FAIL);
@@ -117,7 +127,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     public NormalResponse updateUser(SysUserDTO dto) {
         SysUser sysUser = sysUserMapper.selectById(dto.getId());
         AssertUtils.isTrue(null == sysUser, "该用户不存在", Code.FAIL);
-        sysUser.setFreeze(dto.getFreeze());
+        sysUser.setState(dto.getState());
         sysUser.setNickname(dto.getNickname());
         int num = sysUserMapper.updateById(sysUser);
         AssertUtils.isTrue(num < 1, "修改失败", Code.FAIL);
@@ -125,10 +135,17 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     }
 
     @Override
-    public NormalResponse deleteUser(SysUserDTO dto) {
-        AssertUtils.isTrue(dto.getIds().size() < 1, "请选择删除的用户", Code.FAIL);
-        int num = sysUserMapper.deleteBatchIds(dto.getIds());
-        AssertUtils.isTrue(num != dto.getIds().size(), "删除失败", Code.FAIL);
+    public NormalResponse deleteBatchUser(Integer[] id) {
+        AssertUtils.isTrue(id.length < 1, "请选择需要删除的用户", Code.FAIL);
+        int num = sysUserMapper.deleteBatchIds(Arrays.asList(id));
+        AssertUtils.isTrue(num != id.length, "删除失败", Code.FAIL);
+        return new NormalResponse(Code.SUCCESS, "删除成功");
+    }
+
+    @Override
+    public NormalResponse deleteUser(Integer id) {
+        int num = sysUserMapper.deleteById(id);
+        AssertUtils.isTrue(num < 1, "删除失败", Code.FAIL);
         return new NormalResponse(Code.SUCCESS, "删除成功");
     }
 
@@ -136,33 +153,33 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     public NormalResponse findUserList(SysUserDTO dto, String username) {
         Page<SysUser> page = new Page<>(dto.getPage(), dto.getLimit());
         QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
-        wrapper.select("id","username","nickname","sex","phone","gmt_create");
-        if (StringUtils.isNotBlank(username)){
+        wrapper.select("id", "username", "nickname", "sex", "phone", "state", "gmt_create", "gmt_modified");
+        if (StringUtils.isNotBlank(username)) {
             wrapper.like("username", username);
         }
         Page<SysUser> sysUserPage = sysUserMapper.selectPage(page, wrapper);
         List<SysUser> sysUserList = sysUserPage.getRecords();
 
         QueryWrapper<SysDict> dictWrapper = new QueryWrapper<>();
-        dictWrapper.select("data_code","data_value").eq("data_type","sex");
+        dictWrapper.select("data_code", "data_value").eq("data_type", "sex");
         List<SysDict> sexList = sysDictMapper.selectList(dictWrapper);
 
-        QueryWrapper<SysRole> roleWrapper= new QueryWrapper<>();
-        roleWrapper.select("id","name");
+        QueryWrapper<SysRole> roleWrapper = new QueryWrapper<>();
+        roleWrapper.select("id", "name");
         List<SysRole> sysRoleList = sysRoleMapper.selectList(roleWrapper);
 
         List<SysUser> collect = sysUserList.stream().filter(sysUser -> {
-            sexList.forEach(sex ->{
+            sexList.forEach(sex -> {
                 Integer code = Integer.valueOf(sex.getDataCode());
-                if (sysUser.getSex().equals(code)){
+                if (sysUser.getSex().equals(code)) {
                     sysUser.setSexName(sex.getDataValue());
                 }
             });
             List<SysUserRole> userRoleList = sysUserRoleMapper.findUserRoleList(sysUser.getId());
             SysRole[] roles = new SysRole[userRoleList.size()];
-            sysRoleList.forEach(role ->{
+            sysRoleList.forEach(role -> {
                 for (int i = 0; i < userRoleList.size(); i++) {
-                    if (role.getId().equals(userRoleList.get(i).getRoleId())){
+                    if (role.getId().equals(userRoleList.get(i).getRoleId())) {
                         roles[i] = role;
                     }
                 }
@@ -190,6 +207,19 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         int num = sysUserMapper.updateById(sysUser);
         AssertUtils.isTrue(num < 1, "重置密码失败", Code.FAIL);
         return new NormalResponse(Code.SUCCESS, "重置成功");
+    }
+
+    @Override
+    public NormalResponse updateState(Integer id, Integer state) {
+        AssertUtils.isTrue(null==id,"用户ID不能为空",Code.ARGUMENT_ERROR);
+        AssertUtils.isTrue(null==state,"状态不能为空",Code.ARGUMENT_ERROR);
+        QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
+        wrapper.select("id", "state", "gmt_modified").eq("id", id);
+        SysUser sysUser = sysUserMapper.selectOne(wrapper);
+        sysUser.setState(state == 1);
+        int i = sysUserMapper.updateById(sysUser);
+        AssertUtils.isTrue(i < 1, "修改失败", Code.FAIL);
+        return new NormalResponse(Code.SUCCESS, "修改成功");
     }
 
     private SysUser getUserById(Integer id) {
