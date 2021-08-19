@@ -1,6 +1,7 @@
 package com.oldman.permission.service;
 
 import com.oldman.permission.common.NormalResponse;
+import com.oldman.permission.dto.FindUserListDTO;
 import com.oldman.permission.dto.SysUserDTO;
 import com.oldman.permission.dto.LoginDTO;
 import com.oldman.permission.pojo.SysUser;
@@ -25,11 +26,11 @@ public interface SysUserService extends IService<SysUser> {
 
     NormalResponse updateUser(SysUserDTO dto);
 
-    NormalResponse deleteUser(Integer id);
+    NormalResponse deleteUser(Long id);
 
-    NormalResponse deleteBatchUser(Integer[] id);
+    NormalResponse deleteBatchUser(Long[] id);
 
-    NormalResponse findUserList(SysUserDTO dto,String username);
+    NormalResponse findUserList(FindUserListDTO dto);
 
     NormalResponse resetPassword(Integer id);
 

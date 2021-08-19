@@ -4,6 +4,7 @@ package com.oldman.permission.controller;
 import com.oldman.permission.common.Code;
 import com.oldman.permission.common.NormalResponse;
 import com.oldman.permission.common.valid.ValidGroup;
+import com.oldman.permission.dto.FindUserListDTO;
 import com.oldman.permission.dto.SysUserDTO;
 import com.oldman.permission.dto.LoginDTO;
 import com.oldman.permission.service.SysUserService;
@@ -50,13 +51,13 @@ public class SysUserController {
     }
 
     @DeleteMapping("/user/{id}")
-    public NormalResponse deleteUser(@PathVariable Integer id){
+    public NormalResponse deleteUser(@PathVariable Long id){
         return sysUserService.deleteUser(id);
     }
 
     @GetMapping("/user/page")
-    public NormalResponse findUserList(@Validated(value = ValidGroup.Crud.Query.class) SysUserDTO dto,String username){
-        return sysUserService.findUserList(dto,username);
+    public NormalResponse findUserList(@Validated FindUserListDTO dto){
+        return sysUserService.findUserList(dto);
     }
 
     @PutMapping("/user/state/{id}/{state}")
@@ -65,7 +66,7 @@ public class SysUserController {
     }
 
     @DeleteMapping("/user/batch")
-    public NormalResponse deleteBatchUser(@RequestBody Integer[] id){
+    public NormalResponse deleteBatchUser(@RequestBody Long[] id){
         return sysUserService.deleteBatchUser(id);
     }
 

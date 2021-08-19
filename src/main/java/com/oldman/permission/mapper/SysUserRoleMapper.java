@@ -19,9 +19,10 @@ import java.util.List;
 public interface SysUserRoleMapper extends BaseMapper<SysUserRole> {
 
     @Results(id ="userRoleResults", value={
+            @Result(property="id", column="id"),
             @Result(property="userId", column="user_id"),
             @Result(property="roleId",  column="role_id"),
     })
-    @Select("select user_id,role_id from sys_user_role where user_id = #{id}")
+    @Select("select id,user_id,role_id from sys_user_role where user_id = #{id}")
     List<SysUserRole> findUserRoleList(Long id);
 }
