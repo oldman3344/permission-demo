@@ -31,18 +31,17 @@ public class SysRole implements Serializable {
     /**
      * 角色名称
      */
-    private String name;
+    private String roleName;
+
+    /**
+     * 角色名称
+     */
+    private String roleCode;
 
     /**
      * 备注
      */
     private String remark;
-
-    /**
-     * 是否停用（0否 1是）
-     */
-    @TableField(value = "is_stop")
-    private Boolean stop;
 
     /**
      * 创建时间

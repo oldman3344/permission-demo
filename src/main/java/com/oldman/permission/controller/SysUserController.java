@@ -47,7 +47,7 @@ public class SysUserController {
 
     @PutMapping("/user")
     public NormalResponse updateUser(@RequestBody @Validated(value = ValidGroup.Crud.Update.class) SysUserDTO dto){
-        return sysUserService.updateUser(dto);
+        return sysUserService.addUser(dto);
     }
 
     @DeleteMapping("/user/{id}")

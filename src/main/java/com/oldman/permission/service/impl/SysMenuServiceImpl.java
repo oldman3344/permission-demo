@@ -114,7 +114,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         JSONArray authorityArray = new JSONArray();
         authorityArray.add("user:add");
         authorityArray.add("role:add");
-        roleArray.add(sysRole.getName());
+        roleArray.add(sysRole.getRoleName());
         userObj.put("authorities",authorityArray);
         userObj.put("roles",roleArray);
         jsonObject.put("user",userObj);

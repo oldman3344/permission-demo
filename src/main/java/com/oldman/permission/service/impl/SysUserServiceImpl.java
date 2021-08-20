@@ -81,7 +81,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         List<String> roleNameList = null;
         if (roleIdList.size() > 0) {
             List<SysRole> sysRoles = sysRoleMapper.selectBatchIds(roleIdList);
-            roleNameList = sysRoles.stream().map(SysRole::getName).collect(Collectors.toList());
+            roleNameList = sysRoles.stream().map(SysRole::getRoleName).collect(Collectors.toList());
         }
         JSONObject obj = new JSONObject();
         obj.put("role", roleNameList);
@@ -111,34 +111,31 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public NormalResponse addUser(SysUserDTO dto) {
-        SysUser user = this.getUserByUsername(dto.getUsername());
-        AssertUtils.isTrue(null != user, "添加失败，该用户已存在", Code.FAIL);
-        SysUser sysUser = new SysUser();
-        sysUser.setUsername(dto.getUsername());
-        BCryptPasswordEncoder encode = new BCryptPasswordEncoder();
-        sysUser.setPassword(encode.encode(dto.getPassword()));
-        sysUser.setSex(dto.getSex());
-        if (StringUtils.isNotBlank(dto.getPhone())) {
-            sysUser.setPhone(dto.getPhone());
-        }
-        sysUser.setNickname(dto.getNickname());
-        int num = sysUserMapper.insert(sysUser);
-        AssertUtils.isTrue(num < 1, "添加失败", Code.FAIL);
+        SysUser sysUser;
+        if(null == dto.getId()){
+            sysUser = new SysUser();
+            sysUser.setUsername(dto.getUsername());
+            BCryptPasswordEncoder encode = new BCryptPasswordEncoder();
+            sysUser.setPassword(encode.encode(dto.getPassword()));
+            sysUser.setSex(dto.getSex());
+            if (StringUtils.isNotBlank(dto.getPhone())) {
+                sysUser.setPhone(dto.getPhone());
+            }
+            sysUser.setNickname(dto.getNickname());
+            int num = sysUserMapper.insert(sysUser);
+            AssertUtils.isTrue(num < 1, "添加失败", Code.FAIL);
 
-        Long[] roleIds = dto.getRoleIds();
-        for (int i = 0; i < roleIds.length; i++) {
-            SysUserRole sysUserRole = new SysUserRole();
-            sysUserRole.setUserId(sysUser.getId());
-            sysUserRole.setRoleId(roleIds[i]);
-            int count = sysUserRoleMapper.insert(sysUserRole);
-            AssertUtils.isTrue(count < 1, "添加失败", Code.FAIL);
+            Long[] roleIds = dto.getRoleIds();
+            for (int i = 0; i < roleIds.length; i++) {
+                SysUserRole sysUserRole = new SysUserRole();
+                sysUserRole.setUserId(sysUser.getId());
+                sysUserRole.setRoleId(roleIds[i]);
+                int count = sysUserRoleMapper.insert(sysUserRole);
+                AssertUtils.isTrue(count < 1, "添加失败", Code.FAIL);
+            }
+            return new NormalResponse(Code.SUCCESS, "添加成功");
         }
-        return new NormalResponse(Code.SUCCESS, "添加成功");
-    }
-
-    @Override
-    public NormalResponse updateUser(SysUserDTO dto) {
-        SysUser sysUser = sysUserMapper.selectById(dto.getId());
+        sysUser = sysUserMapper.selectById(dto.getId());
         List<SysUserRole> userRoleList = sysUserRoleMapper.findUserRoleList(dto.getId());
         List<Long> dbRoleIds = userRoleList.stream().map(SysUserRole::getRoleId).collect(Collectors.toList());
 
@@ -218,7 +215,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         List<SysDict> sexList = sysDictMapper.selectList(dictWrapper);
 
         QueryWrapper<SysRole> roleWrapper = new QueryWrapper<>();
-        roleWrapper.select("id", "name");
+        roleWrapper.select("id", "role_name");
         List<SysRole> sysRoleList = sysRoleMapper.selectList(roleWrapper);
 
         List<SysUser> collect = sysUserList.stream().filter(sysUser -> {

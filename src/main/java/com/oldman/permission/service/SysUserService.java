@@ -24,8 +24,6 @@ public interface SysUserService extends IService<SysUser> {
 
     NormalResponse addUser(SysUserDTO dto);
 
-    NormalResponse updateUser(SysUserDTO dto);
-
     NormalResponse deleteUser(Long id);
 
     NormalResponse deleteBatchUser(Long[] id);
